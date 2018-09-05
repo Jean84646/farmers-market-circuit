@@ -8,6 +8,7 @@ function Header() {
         .App {
           font-size: 25px;
           text-align: center;
+          color: #4d8c3c;
         }
 
         .App-logo {

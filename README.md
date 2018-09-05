@@ -32,8 +32,8 @@ For any questions or support details, please email:
 
 ## Spec
 
-* Display
-
+* Display when and where Avery's Organic will be selling produce throughout town.
+* Display produce depending on the month that is in current season.
 
 ## MIT License
 
