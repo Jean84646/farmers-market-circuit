@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 import { AppContainer } from 'react-hot-loader';
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
+import bg from './img/bg1.jpg';
 
 const render = (Component) => {
   ReactDOM.render(

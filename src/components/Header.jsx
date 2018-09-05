@@ -6,14 +6,14 @@ function Header() {
     <div>
       <style jsx>{`
         .App {
-          font-size: 25px;
+          font-size: 100px;
           text-align: center;
           color: #4d8c3c;
         }
 
         .App-logo {
-          animation: App-logo-spin infinite 20s linear;
-          height: 40px;
+          animation: App-logo-spin infinite 10s linear;
+          height: 100px;
         }
 
         @keyframes App-logo-spin {
@@ -22,7 +22,7 @@ function Header() {
         }
         `}</style>
         <div className="App">
-          <h1>Avery's <img src={logo} className="App-logo" alt="logo" />rganics</h1>
+          <p>Avery's <img src={logo} className="App-logo" alt="logo" />rganics</p>
         </div>
     </div>
   );

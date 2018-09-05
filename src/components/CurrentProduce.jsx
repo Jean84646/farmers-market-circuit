@@ -10,7 +10,7 @@ function CurrentProduce(props){
 
   return(
     <div style={produceStyle}>
-      <h2>{props.month}</h2>
+      <h2 style={{fontWeight:'bold'}}>{props.month}</h2>
       {props.selection.map((produce) =>
         <h4>{produce}</h4>
       )}

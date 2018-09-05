@@ -43,7 +43,8 @@ const marketSchedule = [
 function Schedule(){
   return(
     <div>
-      <h1>Market Schedule</h1>
+      <h1 style={{textAlign:'center', color:'#294223'}}>Market Schedule</h1>
+      <hr/>
       {marketSchedule.map((entry, index) =>
         <Location day={entry.day}
           location={entry.location}

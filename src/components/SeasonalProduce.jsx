@@ -271,14 +271,21 @@ const availableProduce = [
 ];
 
 function SeasonalProduce(){
+  var scrollArea = {
+    height: '1116',
+    overflowY: 'scroll'
+  }
   return(
     <div>
-      <h1>Seasonal Produce</h1>
-      {availableProduce.map((entry, index) =>
-        <CurrentProduce month={entry.month}
-          selection={entry.selection}
-          key={index}/>
-      )}
+      <h1 style={{textAlign:'center', color:'#294223'}}>Seasonal Produce</h1>
+      <hr/>
+      <div style={scrollArea}>
+        {availableProduce.map((entry, index) =>
+          <CurrentProduce month={entry.month}
+            selection={entry.selection}
+            key={index}/>
+        )}
+      </div>
     </div>
   );
 }
