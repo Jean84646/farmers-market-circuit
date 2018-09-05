@@ -5,10 +5,17 @@ import SeasonalProduce from './SeasonalProduce';
 
 function App(){
   return (
-    <div>
+    <div className="container">
       <Header/>
-      <Schedule/>
-      <SeasonalProduce/>
+      <hr/>
+      <div className="row">
+        <div className="col-md-6">
+          <Schedule/>
+        </div>
+        <div className="col-md-6">
+          <SeasonalProduce/>
+        </div>
+      </div>
     </div>
   );
 }

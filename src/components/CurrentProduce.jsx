@@ -2,10 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function CurrentProduce(props){
-  
+  var produceStyle = {
+    border: '1px solid #4d8c3c',
+    padding: '10',
+    textAlign: 'center'
+  }
+
   return(
-    <div>
-      <h2>Month: {props.month}</h2>
+    <div style={produceStyle}>
+      <h2>{props.month}</h2>
       {props.selection.map((produce) =>
         <h4>{produce}</h4>
       )}
