@@ -50,16 +50,29 @@ module.exports = {
         loader: "style-loader!css-loader"
       },
       {
-            test: /\.(jpg|png|gif|svg|pdf|ico)$/,
+            test: /\.(jpg|png|gif|svg|pdf)$/,
             use: [
                 {
+                  // loader: 'file?name=src/img/favicon.ico'
                     loader: 'file-loader',
                     options: {
                         name: '[path][name]-[hash:8].[ext]'
                     },
                 },
             ]
-        }
+        },
+        {
+              test: /\.(ico)$/,
+              use: [
+                  {
+                    // loader: 'file?name=src/img/favicon.ico'
+                      loader: 'file-loader',
+                      options: {
+                          name: 'file?name=[name].[ext]'
+                      },
+                  },
+              ]
+          }
     ],
   },
 
@@ -67,6 +80,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
+     favicon: 'src/img/favicon.ico',
      template:'template.ejs',
      appMountId: 'react-app-root',
      title: "Avery's Organics",

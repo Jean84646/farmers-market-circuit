@@ -4,6 +4,7 @@ import App from './components/App';
 import { AppContainer } from 'react-hot-loader';
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import bg from './img/bg1.jpg';
+import './img/favicon.ico';
 
 const render = (Component) => {
   ReactDOM.render(
