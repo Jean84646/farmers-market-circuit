@@ -4,6 +4,7 @@ import Schedule from './Schedule';
 import SeasonalProduce from './SeasonalProduce';
 import bg from './../img/bg1.jpg';
 
+
 function App(){
   var backgroundStyle = {
     backgroundImage: `url(${bg})`

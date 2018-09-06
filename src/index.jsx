@@ -5,11 +5,14 @@ import { AppContainer } from 'react-hot-loader';
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import bg from './img/bg1.jpg';
 import './img/favicon.ico';
+import { HashRouter } from 'react-router-dom';
 
 const render = (Component) => {
   ReactDOM.render(
     <AppContainer>
-      <Component/>
+      <HashRouter>
+        <Component/>
+      </HashRouter>
     </AppContainer>,
     document.getElementById('react-app-root')
   );
