@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function CurrentProduce(props){
+  console.log(props.match);
+  console.log(props.url);
   var produceStyle = {
     border: '1px solid #4d8c3c',
     padding: '10',
