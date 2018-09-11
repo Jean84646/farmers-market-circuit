@@ -85,12 +85,13 @@ class CommentControl extends React.Component {
           <button type="submit">Submit</button>
         </form>
         <hr/>
-          {this.state.masterCommentList.map((entry) =>
+          {this.state.masterCommentList.map((entry, colorCount) =>
             <Comment comment={entry.comment}
                      like={entry.like}
                      id={entry.id}
                      onClickLike={this.handleClickLike}
                      onClickDislike={this.handleClickDislike}
+                     colorCount={colorCount}
                      key={entry.id} />
           )}
       </div>
