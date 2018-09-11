@@ -6,9 +6,11 @@ function Header() {
     <div>
       <style jsx>{`
         .App {
-          font-size: 100px;
+          font-size: 125px;
           text-align: center;
           color: #4d8c3c;
+          font-family: 'EB Garamond', serif;
+          font-weight:bold;
         }
 
         .App-logo {

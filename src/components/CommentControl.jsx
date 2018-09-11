@@ -10,24 +10,31 @@ class CommentControl extends React.Component {
     this.state = {
       masterCommentList: [
         {
-          comment: 'I like you a Latte!',
+          comment: 'I like you a LATTE!',
           like: 1,
           id: '1'
         },
         {
-          comment: 'Are you locally source?',
+          comment: 'I love you very MATCHA!',
           like: 2,
           id: '2'
         },
         {
+          comment: 'Are you locally source?',
+          like: 3,
+          id: '3'
+        },
+        {
           comment: 'haha look at that guy above me, bite me!!!!!',
           like: 1,
-          id: '3'
+          id: '4'
         }
       ]
     };
     this.handleNewCommentFormSubmission = this.handleNewCommentFormSubmission.bind(this);
     this.addNewComment = this.addNewComment.bind(this);
+    this.handleClickLike = this.handleClickLike.bind(this);
+    this.handleClickDislike = this.handleClickDislike.bind(this);
   }
 
   handleNewCommentFormSubmission(event) {
@@ -42,14 +49,23 @@ class CommentControl extends React.Component {
     this.setState({masterCommentList: commentList});
   }
 
-  handleClickLike(id) {
+  handleClickLike(props) {
     let commentList = this.state.masterCommentList.slice();
     commentList.map((entry) => {
-      console.log("test");
-      if(entry.id === id) {
+      if(entry.id === props.id) {
         entry.like++;
-      }}
-    );
+      }
+    });
+    this.setState({masterCommentList: commentList});
+  }
+
+  handleClickDislike(props) {
+    let commentList = this.state.masterCommentList.slice();
+    commentList.map((entry) => {
+      if(entry.id === props.id) {
+        entry.like--;
+      }
+    });
     this.setState({masterCommentList: commentList});
   }
 
@@ -74,6 +90,7 @@ class CommentControl extends React.Component {
                      like={entry.like}
                      id={entry.id}
                      onClickLike={this.handleClickLike}
+                     onClickDislike={this.handleClickDislike}
                      key={entry.id} />
           )}
       </div>
