@@ -1,39 +1,59 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Comment(props){
-  function clickLike(){
-    props.onClickLike(props);
+class Comment extends React.Component{
+  constructor (props) {
+    super(props);
+    this.state = {
+      showEditForm: false
+    };
+    this.background = null;
+    if (this.props.colorCount%2) {
+      this.background = 'oddBg';
+    } else {
+      this.background = 'evenBg';
+    }
+    this.handleToggleEditForm = this.handleToggleEditForm.bind(this);
+    this.handleClickLike = this.handleClickLike.bind(this);
+    this.handleClickDislike = this.handleClickDislike.bind(this);
   }
-  function clickDislike(){
-    props.onClickDislike(props);
+  handleClickLike(){
+    this.props.onClickLike(this.props);
   }
-  let iHaveSpace = {
-    marginLeft: '10',
-    marginRight: '10'
+  handleClickDislike(){
+    this.props.onClickDislike(this.props);
   }
-  let oddBg = {
-    backgroundColor: 'rgb(255, 255, 255, 0.6)'
+  handleToggleEditForm(){
+    this.setState({showEditForm: true});
   }
-  let evenBg = {
-    backgroundColor: 'rgb(255, 255, 255, 0.3)'
-  }
-  let background = null;
-  if (props.colorCount%2) {
-    background = oddBg;
-  } else {
-    background = evenBg;
-  }
-
-  return(
-    <div style={background}>
-      <h6>{props.comment}</h6>
-      <i className="fa fa-thumbs-up" style={iHaveSpace} onClick={clickLike}></i>{props.like}
-      <i className="fa fa-thumbs-down" style={iHaveSpace} onClick={clickDislike}></i>
-      <hr/>
-    </div>
-  );
-};
+  render() {
+    return(
+      <div className={this.background}>
+        <style jsx>{`
+            .iHaveSpace {
+              margin-left: 10px;
+              margin-right: 10px;
+            }
+            .oddBg {
+              background-color: rgb(255, 255, 255, 0.6);
+            }
+            .evenBg {
+              background-color: rgb(255, 255, 255, 0.3);
+            }
+            .pencilStyle {
+              float: right;
+              margin-right: 25px;
+            }
+          `}</style>
+        <h6>{this.props.comment}</h6>
+        <i className="fa fa-thumbs-up iHaveSpace" onClick={this.handleClickLike}></i>{this.props.like}
+        <i className="fa fa-thumbs-down iHaveSpace" onClick={this.handleClickDislike}></i>
+        <i className="fa fa-pencil pencilStyle" onClick={this.handleToggleEditForm}>...</i>
+        <hr/>
+      </div>
+    );
+  };
+}
 
 Comment.propTypes = {
   comment: PropTypes.string.isRequired,
@@ -41,7 +61,7 @@ Comment.propTypes = {
   id: PropTypes.string.isRequired,
   onClickLike: PropTypes.func,
   onClickDislike: PropTypes.func,
-  colorCount: PropTypes.number
+  colorCount: PropTypes.number,
 };
 
 export default Comment;
